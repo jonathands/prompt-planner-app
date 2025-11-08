@@ -15,7 +15,11 @@
     "name": "Your Name",
     "email": "your.email@example.com"
   },
-  "homepage": "https://github.com/yourusername/prompt-manager-electron",
+  "homepage": "https://github.com/jonathands/prompt-planner-app",
+  "repository": {
+    "type": "git",
+    "url": "git@githubmy:jonathands/prompt-planner-app.git"
+  },
   "license": "ISC",
   "dependencies": {
     "marked": "^17.0.0"
