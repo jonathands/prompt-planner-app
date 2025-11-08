@@ -1,0 +1,25 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+
+# Build outputs
+/dist
+/build
+/out
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.backup

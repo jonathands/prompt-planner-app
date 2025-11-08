@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt Manager</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/album.svg" alt="Prompt Manager Logo" class="sidebar-logo">
+                <h2>Prompt Plans</h2>
+            </div>
+            <div class="plans-list" id="plansList">
+                <!-- Plans will be added here dynamically -->
+            </div>
+            <div class="sidebar-new-plan">
+                <button class="new-plan-btn" id="newPlanBtn" title="Create New Plan">
+                    <i class="ph-plus"></i>
+                    <span>New Plan</span>
+                </button>
+            </div>
+            <div class="sidebar-footer">
+                <button class="settings-btn" id="settingsBtn" title="Settings">
+                    <i class="ph-gear"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="editor-container" id="editorContainer">
+                <div class="welcome-message">
+                    <i class="ph-sparkle" style="font-size: 3rem; color: var(--primary-400); margin-bottom: var(--spacing-md);"></i>
+                    <h3>Welcome to Prompt Manager</h3>
+                    <p>Click "New Plan" in the sidebar to create your first prompt plan</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Floating Action Bar -->
+    <div class="floating-action-bar" id="floatingActionBar">
+        <button class="btn btn-ghost add-block-btn btn-bar-left" id="addBlockBtn" title="Add Block">
+            <i class="ph-plus"></i>
+            Add Block
+        </button>
+        <button class="btn btn-ghost copy-full-plan-btn btn-bar-middle" id="copyFullPlanBtn" title="Copy Full Plan">
+            <i class="ph-copy"></i>
+            Copy Full Plan
+        </button>
+        <button class="btn btn-ghost toggle-view-btn btn-bar-middle" id="toggleViewBtn" title="Toggle View Mode">
+            <i class="ph-eye"></i>
+            <span id="viewModeText">Preview</span>
+        </button>
+        <button class="btn btn-ghost close-plan-btn btn-bar-right" id="closePlanBtn" title="Close Plan">
+            <i class="ph-x"></i>
+            Close Plan
+        </button>
+    </div>
+
+    <!-- Save Status Indicator -->
+    <div class="save-status" id="saveStatus">
+        <i class="ph-spinner-gap-bold" id="saveStatusIcon"></i>
+        <span id="saveStatusText">Saving...</span>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="ph-info" id="toastIcon"></i>
+        <span id="toastText"></span>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="ph-gear"></i> Settings</h2>
+                <button class="modal-close-btn" id="closeModalBtn">
+                    <i class="ph-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Dark Mode Toggle -->
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <i class="ph-moon"></i>
+                        <span>Dark Mode</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Font Size -->
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <i class="ph-text"></i>
+                        <span>Font Size</span>
+                    </label>
+                    <div class="font-size-controls">
+                        <button class="btn btn-sm" id="fontDecreaseBtn">
+                            <i class="ph-minus"></i>
+                        </button>
+                        <span class="font-size-value" id="fontSizeValue">14px</span>
+                        <button class="btn btn-sm" id="fontIncreaseBtn">
+                            <i class="ph-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Save Directory -->
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <i class="ph-folder"></i>
+                        <span>Save Location</span>
+                    </label>
+                    <div class="save-directory-controls">
+                        <div class="save-directory-path" id="saveDirectoryPath">Loading...</div>
+                        <div class="save-directory-buttons">
+                            <button class="btn btn-secondary btn-sm" id="changeSaveDirectoryBtn">
+                                <i class="ph-folder"></i>
+                                Change Location
+                            </button>
+                            <button class="btn btn-ghost btn-sm" id="resetSaveDirectoryBtn">
+                                Reset to Default
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Import/Export -->
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <i class="ph-hard-drives"></i>
+                        <span>Data Management</span>
+                    </label>
+                    <div class="import-export-controls">
+                        <button class="btn btn-primary" id="exportBtn">
+                            <i class="ph-download-simple"></i>
+                            Export Plans
+                        </button>
+                        <button class="btn btn-success" id="importBtn">
+                            <i class="ph-upload-simple"></i>
+                            Import Plans
+                        </button>
+                        <input type="file" id="importFileInput" accept=".md,.txt" multiple style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/icons.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

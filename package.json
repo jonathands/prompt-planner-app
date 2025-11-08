@@ -1,0 +1,48 @@
+{
+  "name": "prompt-manager-electron",
+  "version": "1.0.0",
+  "description": "A modern prompt management application for organizing and managing prompts",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --linux",
+    "build:appimage": "electron-builder --linux AppImage",
+    "build:deb": "electron-builder --linux deb",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["prompt", "manager", "ai", "productivity"],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "homepage": "https://github.com/yourusername/prompt-manager-electron",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^17.0.0"
+  },
+  "devDependencies": {
+    "electron": "^39.1.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.promptmanager.app",
+    "productName": "Prompt Manager",
+    "files": [
+      "main.js",
+      "index.html",
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
