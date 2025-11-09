@@ -38,6 +38,7 @@
     "productName": "Prompt Manager",
     "files": [
       "main.js",
+      "preload.js",
       "index.html",
       "src/**/*",
       "assets/**/*",

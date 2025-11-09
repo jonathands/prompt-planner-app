@@ -1,6 +1,7 @@
 const { marked } = require('marked');
-const path = require('path');
-const StorageManager = require(path.join(process.cwd(), 'src', 'storage.js'));
+
+// StorageManager is loaded via preload.js and available as a global
+const StorageManager = window.StorageManager;
 
 class PromptManager {
     constructor() {
