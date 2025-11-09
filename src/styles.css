@@ -704,6 +704,9 @@ body.dark-mode .block-preview blockquote, body.dark-mode .markdown-preview block
     margin: 0;
     backdrop-filter: blur(12px);
     background: rgba(255, 255, 255, 0.95);
+    height: 2.5rem;
+    padding: 0 var(--spacing-md);
+    line-height: 1;
 }
 
 .floating-action-bar .btn:hover {
